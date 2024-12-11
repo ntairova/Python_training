@@ -1,9 +1,10 @@
-from IPython.utils.coloransi import value
+
 
 
 class ContactHelper:
     def __init__(self, app):
         self.app = app
+
 
     def open_add_new_contact_page(self):
         wd = self.app.wd
@@ -88,7 +89,7 @@ class ContactHelper:
         wd.find_element_by_name("selected[]").click()
         #submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
-        wd.switch_to.alert.accept().click()
+        wd.switch_to.alert.accept()
         self.go_to_home_page_with_contacts_list()
 
     def edit_first_contact(self, contact):
