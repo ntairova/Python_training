@@ -1,4 +1,5 @@
-
+from selenium.webdriver.support.expected_conditions import url_contains
+from urllib3.util.url import url_attrs
 
 
 class ContactHelper:
@@ -89,8 +90,9 @@ class ContactHelper:
         wd.find_element_by_name("selected[]").click()
         #submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
-        wd.switch_to.alert.accept()
-        self.go_to_home_page_with_contacts_list()
+        wd.get("http://localhost/addressbook/delete.php?part=selected[];")
+        wd.get("http://localhost/addressbook/index.php")
+
 
     def edit_first_contact(self, contact):
         wd = self.app.wd
