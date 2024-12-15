@@ -17,7 +17,6 @@ class ContactHelper:
         self.open_add_new_contact_page()
         # fill contact form
         self.fill_contact_form(contact)
-        wd.find_element_by_name("new_group").click()
         # submit group creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[20]").click()
         self.go_to_home_page_with_contacts_list()
