@@ -21,7 +21,6 @@ class SessionHelper:
         wd = self.app.wd
         wd.find_element_by_xpath("//div[@id='top']/form/b").text == "("+username+")"
 
-
     def login(self, user_name, password):
         wd = self.app.wd
         self.app.open_home_page()

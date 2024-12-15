@@ -6,7 +6,6 @@ class ContactHelper:
     def __init__(self, app):
         self.app = app
 
-
     def open_add_new_contact_page(self):
         wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
@@ -34,7 +33,6 @@ class ContactHelper:
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.get("http://localhost/addressbook/delete.php?part=selected[];")
         wd.get("http://localhost/addressbook/index.php")
-
 
     def edit_first_contact(self, contact):
         wd = self.app.wd
@@ -109,8 +107,6 @@ class ContactHelper:
         wd.find_element_by_name("ayear").click()
         wd.find_element_by_name("ayear").clear()
         wd.find_element_by_name("ayear").send_keys(contact.ayear)
-
-
 
     def go_to_home_page_with_contacts_list(self):
         wd = self.app.wd
