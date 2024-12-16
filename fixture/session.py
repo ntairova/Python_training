@@ -21,11 +21,11 @@ class SessionHelper:
         wd = self.app.wd
         wd.find_element_by_xpath("//div[@id='top']/form/b").text == "("+username+")"
 
-    def login(self, user_name, password):
+    def login(self, username, password):
         wd = self.app.wd
         self.app.open_home_page()
         wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys(user_name)
+        wd.find_element_by_name("user").send_keys(username)
         wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").clear()
         wd.find_element_by_name("pass").send_keys(password)
@@ -39,6 +39,10 @@ class SessionHelper:
             else:
                 self.logout()
         self.login(username, password)
+
+
+
+
 
 
 

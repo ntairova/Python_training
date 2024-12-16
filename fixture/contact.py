@@ -28,6 +28,7 @@ class ContactHelper:
     def del_first_contact(self):
         wd = self.app.wd
         # select first contact
+        self.go_to_home_page_with_contacts_list()
         wd.find_element_by_name("selected[]").click()
         #submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
@@ -36,6 +37,7 @@ class ContactHelper:
 
     def edit_first_contact(self, contact):
         wd = self.app.wd
+        self.go_to_home_page_with_contacts_list()
         #open edit contact page
         wd.find_element_by_name("selected[]").click()
         wd.find_element_by_xpath("//img[@alt='Edit']").click()
@@ -83,6 +85,7 @@ class ContactHelper:
 
     def go_to_home_page_with_contacts_list(self):
         wd = self.app.wd
+        if wd.current_url.endswith("/index.php") and len(wd.find_elements_by_name("Delete")) > 0:
+            return
         # go to home page with list of contacts
         wd.find_element_by_link_text("home").click()
-        wd.get("http://localhost/addressbook/index.php")
