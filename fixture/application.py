@@ -1,4 +1,6 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.webdriver import WebDriver
+
 from fixture.session import SessionHelper
 from fixture.group import GroupHelper
 from fixture.contact import ContactHelper
@@ -9,7 +11,7 @@ from selenium.webdriver.support.ui import Select
 class Application:
     def __init__(self):
         self.app = Application
-        self.wd = webdriver.Chrome()
+        self.wd = WebDriver()#webdriver.Chrome()
         self.Select = Select
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
@@ -24,7 +26,7 @@ class Application:
 
     def open_home_page(self):
         wd = self.wd
-        wd.get("http://localhost/addressbook/index.php")
+        wd.get("http://localhost/addressbook/")
 
     def destroy(self):
         self.wd.quit()
