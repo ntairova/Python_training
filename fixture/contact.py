@@ -1,5 +1,8 @@
 #from selenium.webdriver.support.expected_conditions import url_contains
 #from urllib3.util.url import url_attrs
+from selenium.webdriver.common.by import By
+
+from model.contact import Contact
 
 
 class ContactHelper:
@@ -89,3 +92,14 @@ class ContactHelper:
             return
         # go to home page with list of contacts
         wd.find_element_by_link_text("home").click()
+
+    def get_contact_list(self):
+        wd = self.app.wd
+        self.go_to_home_page_with_contacts_list()
+        contacts = []
+        for element in wd.find_elements_by_name("entry"):
+            lastname = element.find_elements_by_css_selector("td")[1].text
+            firstname = element.find_elements_by_css_selector("td")[2].text
+            id = element.find_element_by_name("selected[]").get_attribute("value")
+            contacts.append(Contact(firstname=firstname, lastname=lastname, id=id))
+        return contacts
