@@ -30,27 +30,41 @@ class ContactHelper:
         return len(wd.find_elements_by_name("selected[]"))
 
     def del_first_contact(self):
+        self.del_contact_by_index(0)
+
+    def del_contact_by_index(self, index):
         wd = self.app.wd
         # select first contact
         self.go_to_home_page_with_contacts_list()
-        wd.find_element_by_name("selected[]").click()
+        self.select_contact(index)
         #submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.get("http://localhost/addressbook/delete.php?part=selected[];")
         wd.get("http://localhost/addressbook/index.php")
         self.contact_cache = None
 
-    def edit_first_contact(self, contact):
+    def edit_first_contact(self):
+        self.edit_contact_by_index(0)
+
+    def edit_contact_by_index(self, index, contact):
         wd = self.app.wd
         self.go_to_home_page_with_contacts_list()
         #open edit contact page
-        wd.find_element_by_name("selected[]").click()
+        self.select_contact(index)
         wd.find_element_by_xpath("//img[@alt='Edit']").click()
         self.fill_contact_form(contact)
         # submit edit contact action
         wd.find_element_by_xpath("//div[@id='content']/form/input[@value='Update']").click()
         self.go_to_home_page_with_contacts_list()
         self.contact_cache = None
+
+    def select_first_contact(self):
+        wd = self.app.wd
+        wd.find_element_by_name("selected[]")[0].click()
+
+    def select_contact(self, index):
+        wd = self.app.wd
+        wd.find_elements_by_name("selected[]")[index].click()
 
     def fill_contact_form(self, contact):
         wd = self.app.wd

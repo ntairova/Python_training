@@ -1,3 +1,5 @@
+from tokenize import group
+
 from model.group import Group
 
 
@@ -37,7 +39,6 @@ class GroupHelper:
         self.delete_group_by_index(0)
 
     def edit_first_group(self):
-        wd = self.app.wd
         self.edit_group_by_index(0)
 
     def edit_group_by_index(self, index, group):
