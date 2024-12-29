@@ -66,7 +66,10 @@ class ContactHelper:
 
     def click_edit_contact_by_index(self, index):
         wd = self.app.wd
-        wd.find_element_by_xpath(f"//table[@id='maintable']/tbody/tr[@name='entry'][{index}]/td[8]/a/img").click()
+        #wd.find_element_by_xpath(f"//table[@id='maintable']/tbody/tr[@name='entry'][{index}]/td[8]/a/img").click()
+        for i in range(len(wd.find_elements_by_xpath("//img[@alt='Edit']"))):
+            if i == index:
+                wd.find_elements_by_xpath("//img[@alt='Edit']")[i].click()
 
     def fill_contact_form(self, contact):
         wd = self.app.wd
