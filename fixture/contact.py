@@ -6,6 +6,7 @@ import re
 from model.contact import Contact
 
 
+
 class ContactHelper:
     def __init__(self, app):
         self.app = app
@@ -13,7 +14,6 @@ class ContactHelper:
     def open_add_new_contact_page(self):
         wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
-        wd.get("http://localhost/addressbook/edit.php")
 
     def create_new(self, contact):
         wd = self.app.wd
@@ -40,8 +40,6 @@ class ContactHelper:
         self.select_contact(index)
         #submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
-        wd.get("http://localhost/addressbook/delete.php?part=selected[];")
-        wd.get("http://localhost/addressbook/index.php")
         self.contact_cache = None
 
     def edit_first_contact(self):

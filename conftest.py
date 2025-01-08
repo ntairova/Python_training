@@ -2,7 +2,7 @@ import importlib
 import json
 import os.path
 import jsonpickle
-from data.groups import testdata
+#from data.groups import testdata
 from fixture.application import Application
 import pytest
 
