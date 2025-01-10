@@ -42,6 +42,15 @@ class ContactHelper:
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         self.contact_cache = None
 
+    def del_contact_by_id(self, id):
+        wd = self.app.wd
+        # select first contact
+        self.go_to_home_page_with_contacts_list()
+        self.select_contact_by_id(id)
+        # submit deletion
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        self.contact_cache = None
+
     def edit_first_contact(self):
         self.edit_contact_by_index(0)
 
@@ -62,6 +71,10 @@ class ContactHelper:
     def select_contact(self, index):
         wd = self.app.wd
         wd.find_elements_by_name("selected[]")[index].click()
+
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[id = '%s']" % id).click()
 
     def open_contact_to_edit_by_index(self, index):
         wd = self.app.wd
