@@ -2,13 +2,15 @@ from pony.orm import *
 
 #from model.group import Group
 
+
+
 class ORMFixture:
 
     db = Database()
 
     class ORMGroup(db.Entity):
         _table_ = 'group_list'
-        id = PrimaryKey(int, column='group_id')
+        id = PrimaryKey(int, column = 'group_id')
         name = Optional(str, column='group_name')
         header = Optional(str, column='group_header')
         footer = Optional(str, column='group_footer')
@@ -31,7 +33,7 @@ class ORMFixture:
 
     @db_session
     def get_group_list(self):
-         return list(select(g for g in ORMFixture.ORMGroup))
+        return list(select(g for g in ORMFixture.ORMGroup))
 
     @db_session
     def get_contact_list(self):
