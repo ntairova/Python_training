@@ -15,19 +15,13 @@ def test_add_contact_in_group(app):
         app.group.create(Group(name='Test_group'))
     groups = db.get_group_list()
     group = random.choice(groups)
-    print(group)
     old_contacts_in_group = db.get_contacts_in_group(group)
     contacts = db.get_contact_list()
     contact = random.choice(contacts)
-    print(contact)
-    print(old_contacts_in_group)
     app.contact.add_contact_in_group(group.id, contact.id)
     new_contacts_in_group = db.get_contacts_in_group(group)
-    print('new', new_contacts_in_group)
-    print('old',old_contacts_in_group)
     if contact not in old_contacts_in_group:
         old_contacts_in_group.append(contact)
-        print('old', old_contacts_in_group)
     assert sorted(old_contacts_in_group, key=Contact.id_or_max) == sorted(new_contacts_in_group, key=Contact.id_or_max)
 
 
