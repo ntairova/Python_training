@@ -33,7 +33,7 @@ class Contact:
         self.all_emails_from_home_page = all_emails_from_home_page
 
     def __repr__(self):
-        return "%s: %s; %s; %s; %s; %s; %s" % (self.id, self.firstname, self.lastname, self.address, self.all_emails_from_home_page, self.email, self.email2)
+        return "%s: %s; %s" % (self.id, self.firstname, self.lastname) #self.address, self.all_emails_from_home_page, self.email, self.email2)
 
     def __eq__(self, other):
         return ((self.id is None or other.id is None or self.id == other.id)

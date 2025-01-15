@@ -1,7 +1,7 @@
 #from selenium.webdriver.support.expected_conditions import url_contains
 #from urllib3.util.url import url_attrs
 import re
-
+from time import sleep
 
 from model.contact import Contact
 
@@ -196,6 +196,14 @@ class ContactHelper:
          mobile = re.search("M: (.*)", text).group(1)
          work = re.search("W: (.*)", text).group(1)
          return Contact(home=home, mobile=mobile, work=work)
+
+    def add_contact_in_group(self, g_id, c_id):
+        wd = self.app.wd
+        self.go_to_home_page_with_contacts_list()
+        self.select_contact_by_id(c_id)
+        wd.find_element_by_css_selector(f'select[name = to_group] > option[value = "{g_id}"').click()
+        wd.find_element_by_name("add").click()
+
 
 
 
