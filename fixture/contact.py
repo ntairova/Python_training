@@ -204,6 +204,15 @@ class ContactHelper:
         wd.find_element_by_css_selector(f'select[name = to_group] > option[value = "{g_id}"').click()
         wd.find_element_by_name("add").click()
 
+    def delete_contact_from_group(self, g_id, c_id):
+        wd = self.app.wd
+        self.go_to_home_page_with_contacts_list()
+        wd.find_element_by_css_selector(f'select[name = group] > option[value = "{g_id}"').click()
+        self.select_contact_by_id(c_id)
+        wd.find_element_by_name("remove").click()
+
+
+
 
 
 
