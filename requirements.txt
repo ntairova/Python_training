@@ -1,0 +1,7 @@
+pytest_bdd
+pytest
+selenium
+allure-pytest
+PyMySQL
+pony
+jsonpickle
