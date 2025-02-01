@@ -209,7 +209,7 @@ class ContactHelper:
         self.go_to_home_page_with_contacts_list()
         wd.find_element_by_css_selector(f'select[name = group] > option[value = "{g_id}"').click()
         self.select_contact_by_id(c_id)
-        wd.find_element_by_name("remove").click()
+        wd.find_element_by_name('remove').click()
 
 
 

@@ -6,6 +6,8 @@ class ORMFixture:
 
     db = Database()
 
+    #db = Database(host="127.0.0.1", name="addressbook", user="root", password="")
+
     class ORMGroup(db.Entity):
         _table_ = 'group_list'
         id = PrimaryKey(int, column = 'group_id')
@@ -22,6 +24,7 @@ class ORMFixture:
         groups = Set(lambda: ORMFixture.ORMGroup, table="address_in_groups", column="group_id", reverse="contacts",  lazy=True)
 
     def __init__(self, host, name, user, password):
+        self.connection = None
         self.db.bind('mysql', host=host, database=name, user=user, password=password)
         self.db.generate_mapping()
         sql_debug(True)
@@ -53,6 +56,9 @@ class ORMFixture:
     def get_contacts_not_in_group(self, group):
         orm_group = list(select(g for g in ORMFixture.ORMGroup if g.id == group.id))[0]
         return self.convert_contacts_to_model(select(c for c in ORMFixture.ORMContact if orm_group not in c.groups))
+
+    def destroy(self):
+        self.db.disconnect()
 
 
 
