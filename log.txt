@@ -1,0 +1,311 @@
+(.venv) nelya@MacBook-Pro-N Python_training % pytest --alluredir=res ./tests/test_add_new_contact.py
+========================================================================= test session starts =========================================================================
+platform darwin -- Python 3.9.8, pytest-5.0.0, py-1.11.0, pluggy-0.13.1
+rootdir: /Users/nelya/PycharmProjects/Python_training
+plugins: bdd-4.1.0, allure-pytest-2.13.5, gherkin-0.1.4
+collected 6 items
+
+tests/test_add_new_contact.py EEEEEE                                                                                                                            [100%]
+
+=============================================================================== ERRORS ================================================================================
+__________________________________________________________ ERROR at setup of test_add_new_contact[None: ; ] ___________________________________________________________
+
+self = <allure_pytest.listener.AllureListener object at 0x7fdfba4065b0>, item = <Function test_add_new_contact[None: ; ]>
+
+    @pytest.hookimpl(hookwrapper=True)
+    def pytest_runtest_setup(self, item):
+        if not self._cache.get(item.nodeid):
+            uuid = self._cache.push(item.nodeid)
+            test_result = TestResult(name=item.name, uuid=uuid, start=now(), stop=now())
+            self.allure_logger.schedule_test(uuid, test_result)
+        yield
+>       self._update_fixtures_children(item)
+
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:104:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:73: in _update_fixtures_children
+    for fixturedef in _test_fixtures(item):
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:352: in _test_fixtures
+    fixturedefs_pytest = getfixturedefs(fixturemanager, name, item)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fixturemanager = <_pytest.fixtures.FixtureManager object at 0x7fdfba41bb50>, name = 'stop', item = <Function test_add_new_contact[None: ; ]>
+
+    def getfixturedefs(fixturemanager, name, item):
+        """Calls FixtureManager.getfixturedefs in a way compatible with Python
+        versions before and after the change described in pytest-dev/pytest#11785.
+        """
+        getfixturedefs = fixturemanager.getfixturedefs
+        itemarg = __resolve_getfixturedefs_2nd_arg(getfixturedefs, item)
+>       return getfixturedefs(name, itemarg)
+E       AttributeError: 'Function' object has no attribute 'split'
+
+.venv/lib/python3.9/site-packages/allure_pytest/compat.py:14: AttributeError
+________________________________________ ERROR at setup of test_add_new_contact[None: firstnamepLbwDl; lastnameQasp6r6EZ0BLN] _________________________________________
+
+self = <allure_pytest.listener.AllureListener object at 0x7fdfba4065b0>, item = <Function test_add_new_contact[None: firstnamepLbwDl; lastnameQasp6r6EZ0BLN]>
+
+    @pytest.hookimpl(hookwrapper=True)
+    def pytest_runtest_setup(self, item):
+        if not self._cache.get(item.nodeid):
+            uuid = self._cache.push(item.nodeid)
+            test_result = TestResult(name=item.name, uuid=uuid, start=now(), stop=now())
+            self.allure_logger.schedule_test(uuid, test_result)
+        yield
+>       self._update_fixtures_children(item)
+
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:104:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:73: in _update_fixtures_children
+    for fixturedef in _test_fixtures(item):
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:352: in _test_fixtures
+    fixturedefs_pytest = getfixturedefs(fixturemanager, name, item)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fixturemanager = <_pytest.fixtures.FixtureManager object at 0x7fdfba41bb50>, name = 'stop'
+item = <Function test_add_new_contact[None: firstnamepLbwDl; lastnameQasp6r6EZ0BLN]>
+
+    def getfixturedefs(fixturemanager, name, item):
+        """Calls FixtureManager.getfixturedefs in a way compatible with Python
+        versions before and after the change described in pytest-dev/pytest#11785.
+        """
+        getfixturedefs = fixturemanager.getfixturedefs
+        itemarg = __resolve_getfixturedefs_2nd_arg(getfixturedefs, item)
+>       return getfixturedefs(name, itemarg)
+E       AttributeError: 'Function' object has no attribute 'split'
+
+.venv/lib/python3.9/site-packages/allure_pytest/compat.py:14: AttributeError
+____________________________________________ ERROR at setup of test_add_new_contact[None: firstname; lastnameHUZsvkmOlUjK] ____________________________________________
+
+self = <allure_pytest.listener.AllureListener object at 0x7fdfba4065b0>, item = <Function test_add_new_contact[None: firstname; lastnameHUZsvkmOlUjK]>
+
+    @pytest.hookimpl(hookwrapper=True)
+    def pytest_runtest_setup(self, item):
+        if not self._cache.get(item.nodeid):
+            uuid = self._cache.push(item.nodeid)
+            test_result = TestResult(name=item.name, uuid=uuid, start=now(), stop=now())
+            self.allure_logger.schedule_test(uuid, test_result)
+        yield
+>       self._update_fixtures_children(item)
+
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:104:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:73: in _update_fixtures_children
+    for fixturedef in _test_fixtures(item):
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:352: in _test_fixtures
+    fixturedefs_pytest = getfixturedefs(fixturemanager, name, item)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fixturemanager = <_pytest.fixtures.FixtureManager object at 0x7fdfba41bb50>, name = 'stop'
+item = <Function test_add_new_contact[None: firstname; lastnameHUZsvkmOlUjK]>
+
+    def getfixturedefs(fixturemanager, name, item):
+        """Calls FixtureManager.getfixturedefs in a way compatible with Python
+        versions before and after the change described in pytest-dev/pytest#11785.
+        """
+        getfixturedefs = fixturemanager.getfixturedefs
+        itemarg = __resolve_getfixturedefs_2nd_arg(getfixturedefs, item)
+>       return getfixturedefs(name, itemarg)
+E       AttributeError: 'Function' object has no attribute 'split'
+
+.venv/lib/python3.9/site-packages/allure_pytest/compat.py:14: AttributeError
+________________________________________ ERROR at setup of test_add_new_contact[None: firstnameNzZXXyYnJZo; lastnameNa9BhbLu] _________________________________________
+
+self = <allure_pytest.listener.AllureListener object at 0x7fdfba4065b0>, item = <Function test_add_new_contact[None: firstnameNzZXXyYnJZo; lastnameNa9BhbLu]>
+
+    @pytest.hookimpl(hookwrapper=True)
+    def pytest_runtest_setup(self, item):
+        if not self._cache.get(item.nodeid):
+            uuid = self._cache.push(item.nodeid)
+            test_result = TestResult(name=item.name, uuid=uuid, start=now(), stop=now())
+            self.allure_logger.schedule_test(uuid, test_result)
+        yield
+>       self._update_fixtures_children(item)
+
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:104:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:73: in _update_fixtures_children
+    for fixturedef in _test_fixtures(item):
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:352: in _test_fixtures
+    fixturedefs_pytest = getfixturedefs(fixturemanager, name, item)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fixturemanager = <_pytest.fixtures.FixtureManager object at 0x7fdfba41bb50>, name = 'stop'
+item = <Function test_add_new_contact[None: firstnameNzZXXyYnJZo; lastnameNa9BhbLu]>
+
+    def getfixturedefs(fixturemanager, name, item):
+        """Calls FixtureManager.getfixturedefs in a way compatible with Python
+        versions before and after the change described in pytest-dev/pytest#11785.
+        """
+        getfixturedefs = fixturemanager.getfixturedefs
+        itemarg = __resolve_getfixturedefs_2nd_arg(getfixturedefs, item)
+>       return getfixturedefs(name, itemarg)
+E       AttributeError: 'Function' object has no attribute 'split'
+
+.venv/lib/python3.9/site-packages/allure_pytest/compat.py:14: AttributeError
+____________________________________ ERROR at setup of test_add_new_contact[None: firstnamegvOzjAhk9FG; lastname94DadpqXo4H9HALDp] ____________________________________
+
+self = <allure_pytest.listener.AllureListener object at 0x7fdfba4065b0>, item = <Function test_add_new_contact[None: firstnamegvOzjAhk9FG; lastname94DadpqXo4H9HALDp]>
+
+    @pytest.hookimpl(hookwrapper=True)
+    def pytest_runtest_setup(self, item):
+        if not self._cache.get(item.nodeid):
+            uuid = self._cache.push(item.nodeid)
+            test_result = TestResult(name=item.name, uuid=uuid, start=now(), stop=now())
+            self.allure_logger.schedule_test(uuid, test_result)
+        yield
+>       self._update_fixtures_children(item)
+
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:104:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:73: in _update_fixtures_children
+    for fixturedef in _test_fixtures(item):
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:352: in _test_fixtures
+    fixturedefs_pytest = getfixturedefs(fixturemanager, name, item)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fixturemanager = <_pytest.fixtures.FixtureManager object at 0x7fdfba41bb50>, name = 'stop'
+item = <Function test_add_new_contact[None: firstnamegvOzjAhk9FG; lastname94DadpqXo4H9HALDp]>
+
+    def getfixturedefs(fixturemanager, name, item):
+        """Calls FixtureManager.getfixturedefs in a way compatible with Python
+        versions before and after the change described in pytest-dev/pytest#11785.
+        """
+        getfixturedefs = fixturemanager.getfixturedefs
+        itemarg = __resolve_getfixturedefs_2nd_arg(getfixturedefs, item)
+>       return getfixturedefs(name, itemarg)
+E       AttributeError: 'Function' object has no attribute 'split'
+
+.venv/lib/python3.9/site-packages/allure_pytest/compat.py:14: AttributeError
+_________________________________ ERROR at setup of test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP] __________________________________
+
+self = <allure_pytest.listener.AllureListener object at 0x7fdfba4065b0>
+item = <Function test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]>
+
+    @pytest.hookimpl(hookwrapper=True)
+    def pytest_runtest_setup(self, item):
+        if not self._cache.get(item.nodeid):
+            uuid = self._cache.push(item.nodeid)
+            test_result = TestResult(name=item.name, uuid=uuid, start=now(), stop=now())
+            self.allure_logger.schedule_test(uuid, test_result)
+        yield
+>       self._update_fixtures_children(item)
+
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:104:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:73: in _update_fixtures_children
+    for fixturedef in _test_fixtures(item):
+.venv/lib/python3.9/site-packages/allure_pytest/listener.py:352: in _test_fixtures
+    fixturedefs_pytest = getfixturedefs(fixturemanager, name, item)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fixturemanager = <_pytest.fixtures.FixtureManager object at 0x7fdfba41bb50>, name = 'stop'
+item = <Function test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]>
+
+    def getfixturedefs(fixturemanager, name, item):
+        """Calls FixtureManager.getfixturedefs in a way compatible with Python
+        versions before and after the change described in pytest-dev/pytest#11785.
+        """
+        getfixturedefs = fixturemanager.getfixturedefs
+        itemarg = __resolve_getfixturedefs_2nd_arg(getfixturedefs, item)
+>       return getfixturedefs(name, itemarg)
+E       AttributeError: 'Function' object has no attribute 'split'
+
+.venv/lib/python3.9/site-packages/allure_pytest/compat.py:14: AttributeError
+========================================================================== warnings summary ===========================================================================
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamepLbwDl; lastnameQasp6r6EZ0BLN]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamepLbwDl; lastnameQasp6r6EZ0BLN]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamepLbwDl; lastnameQasp6r6EZ0BLN]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamepLbwDl; lastnameQasp6r6EZ0BLN]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname; lastnameHUZsvkmOlUjK]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname; lastnameHUZsvkmOlUjK]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname; lastnameHUZsvkmOlUjK]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname; lastnameHUZsvkmOlUjK]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnameNzZXXyYnJZo; lastnameNa9BhbLu]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnameNzZXXyYnJZo; lastnameNa9BhbLu]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnameNzZXXyYnJZo; lastnameNa9BhbLu]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnameNzZXXyYnJZo; lastnameNa9BhbLu]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamegvOzjAhk9FG; lastname94DadpqXo4H9HALDp]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamegvOzjAhk9FG; lastname94DadpqXo4H9HALDp]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamegvOzjAhk9FG; lastname94DadpqXo4H9HALDp]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamegvOzjAhk9FG; lastname94DadpqXo4H9HALDp]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+  /Users/nelya/PycharmProjects/Python_training/.venv/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py:418: DeprecationWarning: HTTPResponse.getheader() is deprecated and will be removed in urllib3 v2.1.0. Instead use HTTPResponse.headers.get(name, default).
+    if resp.getheader('Content-Type') is not None:
+
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: ; ]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamepLbwDl; lastnameQasp6r6EZ0BLN]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamepLbwDl; lastnameQasp6r6EZ0BLN]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamepLbwDl; lastnameQasp6r6EZ0BLN]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamepLbwDl; lastnameQasp6r6EZ0BLN]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname; lastnameHUZsvkmOlUjK]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname; lastnameHUZsvkmOlUjK]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname; lastnameHUZsvkmOlUjK]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname; lastnameHUZsvkmOlUjK]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnameNzZXXyYnJZo; lastnameNa9BhbLu]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnameNzZXXyYnJZo; lastnameNa9BhbLu]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnameNzZXXyYnJZo; lastnameNa9BhbLu]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnameNzZXXyYnJZo; lastnameNa9BhbLu]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamegvOzjAhk9FG; lastname94DadpqXo4H9HALDp]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamegvOzjAhk9FG; lastname94DadpqXo4H9HALDp]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamegvOzjAhk9FG; lastname94DadpqXo4H9HALDp]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstnamegvOzjAhk9FG; lastname94DadpqXo4H9HALDp]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+tests/test_add_new_contact.py::test_add_new_contact[None: firstname0JPm3Jmmn3XsgsHCr; lastname1Mz8iHotCsuEmLvP]
+  /Users/nelya/PycharmProjects/Python_training/.venv/lib/python3.9/site-packages/selenium/webdriver/remote/remote_connection.py:419: DeprecationWarning: HTTPResponse.getheader() is deprecated and will be removed in urllib3 v2.1.0. Instead use HTTPResponse.headers.get(name, default).
+    content_type = resp.getheader('Content-Type').split(';')
+
+-- Docs: https://docs.pytest.org/en/latest/warnings.html
+================================================================ 78 warnings, 6 error in 5.86 seconds =================================================================
+(.venv) nelya@MacBook-Pro-N Python_training %
+
+
+
+
+
+
+
+
+
