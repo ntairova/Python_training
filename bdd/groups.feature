@@ -1,3 +1,4 @@
+Feature: Group
 Scenario Outline: Add new group
   Given a group list
   Given a group with <name>, <header> and <footer>
