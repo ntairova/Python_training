@@ -1,3 +1,4 @@
+Feature: Contacts
 Scenario Outline: Add new contact
   Given a contact list
   Given a contact with <firstname> and <lastname>
