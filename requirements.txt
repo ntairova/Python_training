@@ -5,6 +5,7 @@ allure-pytest
 pymysql
 pony
 jsonpickle
+pytest-bdd
 mysql-connector-python-rf
 allure-python-commons
 urllib3~=1.26.16
