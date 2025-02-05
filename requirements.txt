@@ -7,4 +7,4 @@ pony
 jsonpickle
 mysql-connector-python-rf
 allure-python-commons
-urllib3~=urllib3
+urllib3~=1.26.16
