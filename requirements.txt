@@ -1,9 +1,9 @@
 pytest_bdd
-pytest~=8.3.4
-selenium~=3.141.0
-allure-pytest~=2.13.5
-PyMySQL~=1.1.1
-pony~=0.7.19
-jsonpickle~=4.0.1
-pytest-bdd~=8.1.0
-allure-python-commons~=2.13.5
+pytest
+selenium
+allure-pytest
+pymysql
+pony
+jsonpickle
+mysql-connector-python-rf
+allure-python-commons
