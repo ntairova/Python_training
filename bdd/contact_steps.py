@@ -1,5 +1,5 @@
 
-from pytest_bdd import given, when, then
+from pytest_bdd import given, when, then, parsers
 from model.contact import Contact
 import random
 
@@ -8,7 +8,7 @@ import random
 def contact_list(db):
     return db.get_contact_list()
 
-@given("a contact with <firstname> and <lastname>", target_fixture="new_contact")
+@given(parsers.parse("a contact with {firstname} and {lastname}"), target_fixture="new_contact")
 def new_contact(firstname, lastname):
    return Contact(firstname=firstname, lastname=lastname)
 
@@ -47,7 +47,7 @@ def verify_contact_deleted(db, non_empty_contact_list, random_contact, app, chec
         assert sorted(new_contacts, key=Contact.id_or_max) == sorted(app.contact.get_contact_list(),
                                                                      key=Contact.id_or_max)
 
-@when("I modify the contact data with <firstname> and <lastname> from the list", target_fixture="modify_contact")
+@when((parsers.parse("I modify the contact data with {firstname} and {lastname} from the list", target_fixture="modify_contact")
 def modify_contact(app, random_contact, firstname, lastname):
     contact =  Contact(firstname=firstname, lastname=lastname)
     contact.id = random_contact.id
