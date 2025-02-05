@@ -1,9 +1,10 @@
 pytest_bdd
 pytest
-selenium
+selenium~=3.141.0
 allure-pytest
 pymysql
 pony
 jsonpickle
 mysql-connector-python-rf
 allure-python-commons
+urllib3~=urllib3
