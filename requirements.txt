@@ -1,4 +1,4 @@
-pytest_bdd
+pytest-bdd
 pytest
 selenium~=3.141.0
 allure-pytest
